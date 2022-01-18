@@ -3,31 +3,18 @@ import { useSelector } from 'react-redux';
 import {
     Collapse,
     Navbar,
-    NavbarToggler,
     NavbarBrand,
     Nav,
-    NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem
 } from 'reactstrap';
 import { userService } from '../../services/userService';
 import './Menu.css';
 const Menu = history => {
 
-    console.log(history);
-
     const { role } = useSelector(store => store.user);    
 
-    const [isOpen, SetIsOpen] = useState(false);
-
-    const toggle = () => SetIsOpen(!isOpen);
+    const [isOpen] = useState(false);
 
     const permission = userService.permissions(role || 'admin');
-
-    console.log(permission);
 
     return (
         <div>

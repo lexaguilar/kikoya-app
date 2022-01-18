@@ -34,9 +34,6 @@ const Login = props => {
 
             const { username, role } = result;
 
-            console.log(username);
-            console.log(role);
-
             dispatch(updateUser({ username, role }));            
 
             props.history.push({ pathname: '/app' });

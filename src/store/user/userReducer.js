@@ -9,15 +9,13 @@ const user = {
 
 export default function userReducer(state = user, { type, payload }) {
 
-    console.log(type);
-
     switch (type) {
 
         case GET_USER:
 
-            var user =JSON.parse(localStorage.getItem('user'));
+            let _user =JSON.parse(localStorage.getItem('user'));
 
-            return {...state, ...user};
+            return {...state, ..._user};
 
         case UPDATE_USER:
 
@@ -27,9 +25,9 @@ export default function userReducer(state = user, { type, payload }) {
 
         default:
 
-            var user =JSON.parse(localStorage.getItem('user'));
+            let current =JSON.parse(localStorage.getItem('user'));
 
-            return {...state, ...user};
+            return {...state, ...current};
 
     }
 

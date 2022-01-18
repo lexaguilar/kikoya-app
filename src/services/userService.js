@@ -11,8 +11,6 @@ const login = user => {
 
     return new Promise((resolve, reject) => {
         
-        console.log(users);
-        
         const userResult = users.find(u => u.username === user.username && u.password === user.password);
         
         const existUser = userResult != null;
