@@ -14,7 +14,7 @@ import {
     DropdownItem
 } from 'reactstrap';
 import { userService } from '../../services/userService';
-
+import './Menu.css';
 const Menu = history => {
 
     console.log(history);
@@ -35,26 +35,25 @@ const Menu = history => {
 
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="ml-auto" navbar>
-                        <UncontrolledDropdown nav inNavbar>
-                             <DropdownToggle nav caret>
-                                {permission.role}
-                            </DropdownToggle>
-                            <DropdownMenu right>
-                                { permission && 
+                        <NavbarBrand href="#"></NavbarBrand>
+                        <div className='menu'>
+                            <div>{permission.role}</div>
+                            { permission && 
                                     permission.modules.map((module, key) => {
 
-                                        return   <DropdownItem key={key}>
-                                                {module.option} 
-                                            </DropdownItem>
+                                        return <div key={key} className='submenu'>
+                                            {module.option}
+                                        </div>
+                                       
                                         
 
                                     })
-                                }                                      
-                            </DropdownMenu>                          
-                        </UncontrolledDropdown>
-                        <NavItem>
-                            <button  onClick={ e => history.history.push({ pathname: '/login' })}>Salir</button>
-                        </NavItem>
+                                } 
+                             <div><button  onClick={ e => history.history.push({ pathname: '/login' })}>Salir</button></div>
+                        </div>
+                         
+                    
+                        
                     </Nav>
                 </Collapse>
             </Navbar>

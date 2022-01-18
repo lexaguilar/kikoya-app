@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from "react-redux";
 import { userService } from '../../services/userService';
 import { updateUser } from '../../store/user/userActions';
-
+import './Login.css';
 
 const Login = props => {
 
@@ -53,13 +53,13 @@ const Login = props => {
 
     return (
         <div>
-              <div className="container">
+              <div className="container" style={{ width: '400px', marginTop:'50px'}}>
                 <form className="form-signin" onSubmit={sendUser}>                   
                     <div style={{ paddingTop: 5 }}>
                         <h4 className="h4-secundary">Iniciar sesión</h4>
 
-                        <input value={user.username} onChange={onValueChange} type="text" className="form-control" name="username" placeholder="Usuario" required autoFocus={true} />
-                        <input value={user.password} onChange={onValueChange} type="password" className="form-control" name="password" placeholder="Contraseña" required />
+                        <input value={user.username} onChange={onValueChange} type="text" className="form-control login-control" name="username" placeholder="Usuario" required autoFocus={true} />
+                        <input value={user.password} onChange={onValueChange} type="password" className="form-control login-control" name="password" placeholder="Contraseña" required />
                         <span className="text-danger">{error}</span>
                     </div>
                         <input
