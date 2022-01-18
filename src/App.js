@@ -22,7 +22,7 @@ const App = () => {
                     component={Payment}
                 />             
                 <Route path="/login" component={Login} />
-                <Redirect to='/notfound'/>
+                <Redirect to='/app'/>
             </Switch>
         </BrowserRouter>
     )
